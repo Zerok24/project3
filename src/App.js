@@ -1,25 +1,54 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState, useEffect } from 'react'
+import { Post } from './Post';
+import { Navbar } from './Navbar';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Home } from './Home';
+import { Create } from './Create';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  
+  const [data, setData] = useState([]); 
+  const [loading, setLoad] = useState(false);
+
+  useEffect( ()=>{
+
+    async function getData(){
+
+      setLoad(true);
+
+      const result = await fetch("https://project2.bunguiunorales.me:8443/posts");
+      const convert = await result.json();
+      
+      setData(convert);
+      setLoad(false);
+
+    }
+    getData();
+
+  }, []);
+
+
+  if(loading){
+    return(
+      <div>Loading</div>
+      );
+  }else{
+    return(
+      <div> 
+          <Router>
+            <Navbar/>
+            <Routes>
+              <Route path = "/" element = {<Home data = {data}/>}></Route>
+              <Route path="/post/:id" element={<Post data={data}/>} />
+              <Route path="/create" element={<Create/>} />
+            </Routes>
+          </Router>
+      </div>
+    );
+  }
+
 }
 
 export default App;

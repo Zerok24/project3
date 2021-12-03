@@ -1,0 +1,18 @@
+.nav-container{
+    display: flex;
+    width: 50%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: baseline;
+    margin-bottom: 40px;
+    padding: 50px;
+
+}
+
+
+.options{
+    display: flex;
+    width:50% ;
+    justify-content: space-between;
+}

@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a:-webkit-any-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+.container{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: box-shadow 200ms ease 0s, transform 200ms ease 0s;   
+    border: black solid 2px;
+    padding: 50px;
+}
+
+.container:hover{
+    transform: translate(-2px, -2px);
+    box-shadow:  -10px 10px 0px  #222;
+}
