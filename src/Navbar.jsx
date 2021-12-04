@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Navbar.css";
-import {Link} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 
 export function Navbar(){
 
@@ -9,9 +9,9 @@ export function Navbar(){
         <div className = "nav-container">
 
             <div className= "logo">
-                <Link to={"/"}>
+                <NavLink to={"/"}>
                     <h1>Blogger</h1>
-                </Link>
+                </NavLink>
             </div>
 
             <div className="options">

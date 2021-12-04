@@ -2,8 +2,8 @@ import './App.css';
 import React, { useState, useEffect } from 'react'
 import { Post } from './Post';
 import { Navbar } from './Navbar';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Home } from './Home';
+import { Route, Routes } from 'react-router-dom';
+import Home  from './Home';
 import { Create } from './Create';
 
 
@@ -37,14 +37,14 @@ function App() {
   }else{
     return(
       <div> 
-          <Router>
+          {/* <Router> */}
             <Navbar/>
             <Routes>
-              <Route path = "/" element = {<Home data = {data}/>}></Route>
+              <Route path = "/" element = {<Home/>}></Route>
               <Route path="/post/:id" element={<Post data={data}/>} />
               <Route path="/create" element={<Create/>} />
             </Routes>
-          </Router>
+          {/* </Router> */}
       </div>
     );
   }
