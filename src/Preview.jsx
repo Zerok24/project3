@@ -9,12 +9,12 @@ export function Preview(props){
 
     return(
         <div className="container">
-            <div className= "left" >
-                <Link to = {`/post/${id}`} >
-                    <h1>{title}</h1>
-                    <p>by {author} </p>
-                </Link>
-            </div>
+            <Link to = {`/post/${id}`} >
+                <div className= "left" >
+                        <h1>{title}</h1>
+                        <p>by {author} </p>
+                </div>
+            </Link>
             <div className="right">
                 <Like likes = {likes} id={id}></Like>
             </div>

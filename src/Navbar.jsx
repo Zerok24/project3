@@ -15,7 +15,9 @@ export function Navbar(){
             </div>
 
             <div className="options">
-                <p>Home</p>
+                <Link to={"/"}>
+                 <p>Home</p>
+                </Link>
                 <Link to={"/create"}> 
                     <p>Create</p>
                 </Link>

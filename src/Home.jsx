@@ -6,11 +6,7 @@ import { useEffect } from 'react';
 import { fetchAllData } from './actions';
 
 
-export default function Home(props){
-
-    // const {data} = props;
-    // // console.log(data);
-
+export default function Home(){
     
     const dispatch = useDispatch();
     useEffect(() => {
@@ -19,19 +15,13 @@ export default function Home(props){
     
     const reduxData = useSelector(state => state);
 
-
-    console.log(reduxData);
-
-    // console.log("here");
     return(
 
         <div>
             {reduxData.map((elem) => {
-                // console.log(elem);
                 return(
                     <Preview title = {elem.title} author = {elem.author} id = {elem.id} likes={elem.likes}/>
                 );
-                  
             })}
  
         </div>

@@ -21,7 +21,7 @@ export function Create(){
         console.log(formData);
 
         
-        //   WORKS BUT DON'T WANT TO PUT MORE INFO IN DATABASE
+        //   WORKS BUT DON'T WANT TO PUT MORE STUFF INFO IN DATABASE
         // fetch("https://project2.bunguiunorales.me:8443/post",{
         //     body: JSON.stringify(formData),
         //     headers:{
