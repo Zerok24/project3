@@ -22,14 +22,14 @@ export function Create(){
 
         
         //   WORKS BUT DON'T WANT TO PUT MORE STUFF INFO IN DATABASE
-        // fetch("https://project2.bunguiunorales.me:8443/post",{
-        //     body: JSON.stringify(formData),
-        //     headers:{
-        //         'Content-Type' : 'application/json'
-        //     },
-        //     method:"POST",
+        fetch("https://project2.bunguiunorales.me:8443/post",{
+            body: JSON.stringify(formData),
+            headers:{
+                'Content-Type' : 'application/json'
+            },
+            method:"POST",
             
-        // });
+        });
 
     }
 

@@ -14,13 +14,14 @@ export default function Home(){
     }, [dispatch]);
     
     const reduxData = useSelector(state => state);
+    console.log(reduxData);
 
     return(
 
         <div>
-            {reduxData.map((elem) => {
+            {reduxData.map((elem, i) => {
                 return(
-                    <Preview title = {elem.title} author = {elem.author} id = {elem.id} likes={elem.likes}/>
+                    <Preview key = {i} title = {elem.title} author = {elem.author} id = {elem.id} likes={elem.likes}/>
                 );
             })}
  

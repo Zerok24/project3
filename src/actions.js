@@ -1,18 +1,17 @@
 export const Action = Object.freeze({
     LoadAllData: "LoadAllData",
     LoadPost: "LoadPost",
-    // LoadAlbums: "LoadAlbums",
+    // LoadDelete: "LoadDelete",
     // LoadTracks: "LoadTracks",
 });
 
 
 export function loadAllData(data){
-    // console.log("here!");
     return { type: Action.LoadAllData, payload: data };
 
 }
 
-export function LoadPost(post){
+export function loadPost(post){
     return { type: Action.LoadPost, payload: post };
 }
 
@@ -27,6 +26,13 @@ export function fetchAllData(){
     }
 }
 
+// export function fetchDelete(postID){
+//     return dispatch =>{
+//         fetch(`https://project2.bunguiunorales.me:8443/${postID}`)
+//         .then
+//     }
+// }
+
 
 
 export function fetchPost(postID){
@@ -35,7 +41,7 @@ export function fetchPost(postID){
 
         fetch(`https://project2.bunguiunorales.me:8443/posts/${postID}`)
         .then(res => res.json())
-        .then(post => dispatch(LoadPost(post)) ) ;
+        .then(post => dispatch(loadPost(post)) ) ;
 
     }
 
