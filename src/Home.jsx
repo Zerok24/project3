@@ -4,6 +4,7 @@ import { Preview } from './Preview';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchAllData } from './actions';
+import "./styles/Home.css";
 
 
 export default function Home(){

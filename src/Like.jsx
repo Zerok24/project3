@@ -1,5 +1,5 @@
 import React, {  useState } from 'react';
-import "./Like.css";
+import "./styles/Like.css";
 
 export function Like(props){
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import "./Post.css";
+import "./styles/Post.css";
 import { useNavigate,useParams} from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
@@ -44,9 +44,16 @@ export function Post(props){
             <div className= "post-container">
                 
                 <h1 id="title">{reduxData.title}</h1>
-                <p>{reduxData.content}</p>
 
-                <button onClick={deleteIt}>Delete</button>
+                {reduxData.content.split("\n").map(elem =>{
+                    return(
+                        <div className = "chunks">
+                            <p>{elem}</p>
+                        </div>
+                    )
+                })}
+
+                <button id="delete" onClick={deleteIt}>Delete</button>
             </div>
         );
 

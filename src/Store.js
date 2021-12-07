@@ -29,7 +29,6 @@ function reducer(state , action){
         case Action.LoadPost:
             return [action.payload[0]];
             
-
         default:
             return state;
     }

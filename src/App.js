@@ -1,4 +1,4 @@
-import './App.css';
+import './styles/App.css';
 import React, { useState, useEffect } from 'react'
 import { Post } from './Post';
 import { Navbar } from './Navbar';

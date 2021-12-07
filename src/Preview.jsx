@@ -1,5 +1,5 @@
 import React from 'react';
-import "./Preview.css" ;
+import "./styles/Preview.css" ;
 import {Link} from 'react-router-dom';
 import {Like} from "./Like";
 
