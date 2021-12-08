@@ -1,8 +1,8 @@
 export const Action = Object.freeze({
     LoadAllData: "LoadAllData",
     LoadPost: "LoadPost",
-    // LoadDelete: "LoadDelete",
-    // LoadTracks: "LoadTracks",
+    IsProgessing: 'IsProgressing',
+    StopProgressing: 'StopProgressing',
 });
 
 
@@ -15,6 +15,16 @@ export function loadPost(post){
     return { type: Action.LoadPost, payload: post };
 }
 
+export function showProgress()
+{
+    return {type: Action.IsProgessing, payload: true};
+}
+
+function hideProgress()
+{
+    return {type: Action.StopProgressing, payload: false};
+}
+
 
 export function fetchAllData(){
     return dispatch =>{
@@ -25,14 +35,6 @@ export function fetchAllData(){
 
     }
 }
-
-// export function fetchDelete(postID){
-//     return dispatch =>{
-//         fetch(`https://project2.bunguiunorales.me:8443/${postID}`)
-//         .then
-//     }
-// }
-
 
 
 export function fetchPost(postID){
