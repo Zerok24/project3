@@ -32,7 +32,7 @@ function App() {
 
   if(loading){
     return(
-      <div>Loading</div>
+      <div className='spinner'></div>
       );
   }else{
     return(

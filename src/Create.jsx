@@ -1,12 +1,16 @@
 import React from 'react';
 import { useState } from 'react/cjs/react.development';
 import "./styles/Create.css";
+import { useNavigate } from 'react-router-dom';
+
 
 export function Create(){
 
     const [author, setAuthor] = useState("");
     const [title,setTitle] = useState("");
     const [post,setPost] = useState("");
+    const navigate = useNavigate();
+
 
     function printer(){
         console.log(author);
@@ -29,6 +33,8 @@ export function Create(){
             },
             method:"POST",
             
+        }).then(()=>{
+            navigate("/");
         });
 
     }

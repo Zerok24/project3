@@ -6,7 +6,6 @@ import { useEffect } from 'react';
 import { fetchAllData } from './actions';
 import "./styles/Home.css";
 
-
 export default function Home(){
     
     const dispatch = useDispatch();
@@ -21,7 +20,7 @@ export default function Home(){
 
     if(isProgressing){
         return (
-            <div>loading</div>
+            <div className='spinner'></div>
         )
     }else{
 

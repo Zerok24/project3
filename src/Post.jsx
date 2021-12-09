@@ -8,7 +8,7 @@ import { fetchPost } from './actions';
 
 
 
-export function Post(props){
+export function Post(){
 
     const params = useParams();
 
@@ -37,7 +37,7 @@ export function Post(props){
     
     if(isProgressing){
         return(
-            <div>Loading</div>
+            <div className='spinner'></div>
             );
         }else{
             return (
