@@ -15,11 +15,13 @@ export function Post(props){
     const postId = Number(params.id)
 
     const navigate = useNavigate();
-
     const dispatch = useDispatch();
+    const isProgressing = useSelector(state => state.isProgressing);
+
     useEffect(() => {
         dispatch(fetchPost(postId));
     }, [dispatch, postId]);
+
 
     const deleteIt = ()=>{
         fetch(`https://project2.bunguiunorales.me:8443/${postId}`, {
@@ -31,23 +33,22 @@ export function Post(props){
 
     }
 
-    const [reduxData] = useSelector(state => state);
+    const [reduxData] = useSelector(state => state.data);
     
-    if(reduxData === undefined){
+    if(isProgressing){
         return(
             <div>Loading</div>
             );
         }else{
-            console.log(reduxData.content.split("\n"));
             return (
                 
             <div className= "post-container">
                 
                 <h1 id="title">{reduxData.title}</h1>
 
-                {reduxData.content.split("\n").map(elem =>{
+                {reduxData.content.split("\n").map((elem, i) =>{
                     return(
-                        <div className = "chunks">
+                        <div key={i} className = "chunks">
                             <p>{elem}</p>
                         </div>
                     )

@@ -1,7 +1,7 @@
 export const Action = Object.freeze({
     LoadAllData: "LoadAllData",
     LoadPost: "LoadPost",
-    IsProgessing: 'IsProgressing',
+    IsProgressing: 'IsProgressing',
     StopProgressing: 'StopProgressing',
 });
 
@@ -15,9 +15,9 @@ export function loadPost(post){
     return { type: Action.LoadPost, payload: post };
 }
 
-export function showProgress()
+function showProgress()
 {
-    return {type: Action.IsProgessing, payload: true};
+    return {type: Action.IsProgressing, payload: true};
 }
 
 function hideProgress()
@@ -28,10 +28,13 @@ function hideProgress()
 
 export function fetchAllData(){
     return dispatch =>{
-
+        dispatch(showProgress());
         fetch("https://project2.bunguiunorales.me:8443/posts")
         .then(response => response.json())
-        .then(data => dispatch(loadAllData(data)));
+        .then(data => {
+            dispatch(loadAllData(data));
+            dispatch(hideProgress());
+        });
 
     }
 }
@@ -40,10 +43,13 @@ export function fetchAllData(){
 export function fetchPost(postID){
 
     return dispatch =>{
-
+        dispatch(showProgress());
         fetch(`https://project2.bunguiunorales.me:8443/posts/${postID}`)
         .then(res => res.json())
-        .then(post => dispatch(loadPost(post)) ) ;
+        .then(post =>{ 
+            dispatch(loadPost(post));
+            dispatch(hideProgress());
+        }) ;
 
     }
 

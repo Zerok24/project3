@@ -3,8 +3,15 @@
     padding: 0;
 }
 
+.like-container{
+    display: flex;
+    height: 38px;
+}
+
 .like-count {
-    margin-left: 10px;
-    font-size: 20px;
-    /* font-weight: 100px; */
+    /* margin-left: 10px; */
+    /* font-size: 20px; */
+    align-self: end;
+
+    font-size: 28px;
 }

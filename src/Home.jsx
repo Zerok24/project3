@@ -10,23 +10,32 @@ import "./styles/Home.css";
 export default function Home(){
     
     const dispatch = useDispatch();
+    
+    const isProgressing = useSelector(state => state.isProgressing);
+    
     useEffect(() => {
         dispatch(fetchAllData());
     }, [dispatch]);
     
     const reduxData = useSelector(state => state);
-    console.log(reduxData);
 
-    return(
+    if(isProgressing){
+        return (
+            <div>loading</div>
+        )
+    }else{
 
-        <div>
-            {reduxData.map((elem, i) => {
-                return(
-                    <Preview key = {i} title = {elem.title} author = {elem.author} id = {elem.id} likes={elem.likes}/>
-                );
-            })}
- 
-        </div>
-    );
+        return(
+    
+            <div>
+                {reduxData.data.map((elem, i) => {
+                    return(
+                        <Preview key = {i} title = {elem.title} author = {elem.author} id = {elem.id} likes={elem.likes}/>
+                    );
+                })}
+     
+            </div>
+        );
+    }
 
 }

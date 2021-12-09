@@ -2,33 +2,41 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { Action } from './actions';
 
-const initialState = [];
+const initialState = {
 
-    // {
-    //     id: 10,
-    //     author: "Joseph Alejandro",
-    //     title: "Mission",
-    //     content: "Servi mi mision en Guatemala y California"
-    // }
-
-// };
+    isProgressing:true,
+    data:[]
+};
 
 function reducer(state , action){
 
     switch (action.type) {
 
         case Action.LoadAllData:
-            // console.log(action.payload);
-
-            return [
-                ...action.payload,
-                // ...state,
-
-            ]
-
+            return {
+                ...state,
+                data: action.payload,
+                
+            }
         case Action.LoadPost:
-            return [action.payload[0]];
-            
+            return {
+                ...state,
+                data:[action.payload[0]]
+            };
+        
+        case Action.IsProgressing:
+            return{
+
+                isProgressing: action.payload,
+                data: state.data
+            }
+        
+        case Action.StopProgressing:
+            return {
+                isProgressing: action.payload,
+                data: state.data
+            }
+
         default:
             return state;
     }

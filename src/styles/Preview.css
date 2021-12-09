@@ -12,7 +12,6 @@ a:-webkit-any-link {
     
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
     width: 50%;
     margin: 0 auto;
     margin-bottom: 20px;
@@ -25,4 +24,24 @@ a:-webkit-any-link {
 .container:hover{
     transform: translate(-2px, -2px);
     box-shadow:  -10px 10px 0px  #222;
+}
+
+@media (max-width: 450px) {
+    
+    .container{
+        flex-direction: column;        
+        width: 50vw;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    .left{
+        
+        width: 80%;
+    }
+    
+    /* #pre-title{ */
+        /* font-size: 25px; */
+    /* } */
+
 }
