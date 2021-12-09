@@ -12,13 +12,13 @@ export default function Home(){
     const dispatch = useDispatch();
     
     const isProgressing = useSelector(state => state.isProgressing);
+    const reduxData = useSelector(state => state);
+    console.log(reduxData);
     
     useEffect(() => {
         dispatch(fetchAllData());
     }, [dispatch]);
     
-    const reduxData = useSelector(state => state);
-
     if(isProgressing){
         return (
             <div>loading</div>
