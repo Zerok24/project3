@@ -15,3 +15,17 @@
 
     font-size: 28px;
 }
+
+.dos{
+    display: none;
+}
+
+@media (max-width: 450px) {
+
+    .uno{
+        display: none;
+    }
+    .dos{
+        display: block;
+    }
+}

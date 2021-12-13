@@ -8,6 +8,10 @@ a:-webkit-any-link {
     color: inherit;
   }
 
+#short-title{
+    display: none;
+}
+
 .container{
     
     display: flex;
@@ -19,6 +23,7 @@ a:-webkit-any-link {
     transition: box-shadow 200ms ease 0s, transform 200ms ease 0s;   
     border: black solid 2px;
     padding: 50px;
+    background-color: white;
 }
 
 .container:hover{
@@ -26,11 +31,26 @@ a:-webkit-any-link {
     box-shadow:  -10px 10px 0px  #222;
 }
 
+.left{
+    width: 100%
+}
+@media (max-width: 650px) {
+    #short-title{
+        display: block;
+        font-size: 25px;
+    }
+    #pre-title{
+        display: none;
+    }
+
+    
+}
+
 @media (max-width: 450px) {
     
     .container{
         flex-direction: column;        
-        width: 50vw;
+        width: 50%;
         margin: 0 auto;
         margin-bottom: 20px;
     }
@@ -39,9 +59,9 @@ a:-webkit-any-link {
         
         width: 80%;
     }
-    
-    /* #pre-title{ */
-        /* font-size: 25px; */
-    /* } */
 
+    #short-title, #pre-title{
+        font-size: 25px;
+    }
 }
+

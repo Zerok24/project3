@@ -7,10 +7,10 @@ export function Navbar(){
 
     return(
         <div className = "nav-container">
-
             <div className= "logo">
                 <NavLink to={"/"}>
                     <h1 id= "logo-text">Blogger</h1>
+                    <h1 id= "short-logo">B.</h1>
                 </NavLink>
             </div>
 

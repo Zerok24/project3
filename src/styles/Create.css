@@ -17,3 +17,28 @@ input{
     height: 30px;
     margin-bottom: 30px;
 }
+
+label{
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+
+
+
+@media (max-width: 650px) {
+
+    .form-container{
+        width: 80%;
+    }
+
+    input{
+        width: 100%;
+    }
+
+    textarea{
+        width: 100%;
+    }
+
+}
+
+

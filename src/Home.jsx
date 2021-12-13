@@ -12,7 +12,7 @@ export default function Home(){
     
     const isProgressing = useSelector(state => state.isProgressing);
     const reduxData = useSelector(state => state);
-    console.log(reduxData);
+    // console.log(reduxData);
     
     useEffect(() => {
         dispatch(fetchAllData());
@@ -26,7 +26,7 @@ export default function Home(){
 
         return(
     
-            <div>
+            <div  >
                 {reduxData.data.map((elem, i) => {
                     return(
                         <Preview key = {i} title = {elem.title} author = {elem.author} id = {elem.id} likes={elem.likes}/>
